@@ -47,8 +47,8 @@ if ($c->isEditMode()) {
                     }
                 },
                 eventAfterRender: function(event, element, view) {
+                    $('div[data-calendar=<?=$bID?>]+.calendarCaption .caName').text('<?php echo $calendar->getName(); ?>');
                     $('div[data-calendar=<?=$bID?>]+.calendarCaption .icon').css('color', event.backgroundColor);
-                    $('div[data-calendar=<?=$bID?>]+.calendarCaption .text').text(event.title);
                     $('div[data-calendar=<?=$bID?>]+.calendarCaption .text').text(event.title);
                 }
             });
