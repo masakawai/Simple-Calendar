@@ -1,0 +1,82 @@
+/*
+calendar custom template
+
+Simple Calendar
+
+*/
+.simple-calendar {
+  padding: 8px;
+  background-color: white;
+}
+.simple-calendar .fc-toolbar {
+  margin-bottom: 0.25em;
+}
+.simple-calendar div.fc-toolbar h2 {
+  margin-top: 4px;
+  font-size: 1em;
+}
+.simple-calendar div.fc-day-grid-container {
+  height: auto!important;
+  overflow-y: visible;
+}
+.simple-calendar .fc-basic-view .fc-body .fc-row {
+  min-height: initial;
+  min-height: auto;
+  height: auto!important;
+}
+.simple-calendar button.fc-button {
+  height: auto;
+  padding: 0.25em;
+  font-size: 0.75em;
+}
+.simple-calendar .fc-day-header {
+  font-size: 0.85em;
+}
+.simple-calendar .fc-content-skeleton {
+  height: calc(1em + 4px);
+  overflow: hidden;
+}
+.simple-calendar .fc-content-skeleton tbody tr {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+.simple-calendar .fc-content-skeleton tbody tr td {
+  display: inline-block;
+  width: calc(14.285714285714286% - 2px);
+}
+.simple-calendar .fc-content-skeleton tbody tr td[colspan="2"] {
+  width: calc((14.285714285714286% * 2) - 2px);
+}
+.simple-calendar .fc-content-skeleton tbody tr td[colspan="3"] {
+  width: calc((14.285714285714286% * 3) - 2px);
+}
+.simple-calendar .fc-content-skeleton tbody tr td[colspan="4"] {
+  width: calc((14.285714285714286% * 4) - 2px);
+}
+.simple-calendar .fc-content-skeleton tbody tr td[colspan="5"] {
+  width: calc((14.285714285714286% * 5) - 2px);
+}
+.simple-calendar .fc-content-skeleton tbody tr td[colspan="6"] {
+  width: calc((14.285714285714286% * 6) - 2px);
+}
+.simple-calendar .fc-content-skeleton tbody tr td[colspan="7"] {
+  width: calc((14.285714285714286% * 7) - 2px);
+}
+.simple-calendar .fc-basic-view .fc-day-number {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  font-size: 0.85em;
+}
+.simple-calendar .fc-title {
+  visibility: hidden;
+}
+.simple-calendar .fc-event {
+  padding: 2px;
+  border: none;
+}
+.calendarCaption {
+  padding: 0 8px;
+  font-size: 0.85em;
+}

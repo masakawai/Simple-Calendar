@@ -1,0 +1,77 @@
+/*
+calendar custom template
+
+Simple Calendar
+
+*/
+
+@cell_width: 100% / 7;
+
+.simple-calendar {
+    padding: 8px;
+    background-color: white;
+    .fc-toolbar {
+        margin-bottom: 0.25em;
+    }
+    div.fc-toolbar h2 {
+        margin-top: 4px;
+        font-size: 1em;
+    }
+    div.fc-day-grid-container {
+        height: auto!important;
+        overflow-y: visible;
+    }
+    .fc-basic-view .fc-body .fc-row {
+        min-height: initial;
+        min-height: auto;
+        height: auto!important;
+    }
+    button.fc-button {
+        height: auto;
+        padding: 0.25em;
+        font-size: 0.75em;
+    }
+    .fc-day-header {
+        font-size: 0.85em;
+    }
+    .fc-content-skeleton {
+        height: calc(~'1em + 4px');
+        overflow: hidden;
+        tbody tr {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            td {
+                display: inline-block;
+                width: calc(~'@{cell_width} - 2px');
+                // start loop - set width td colspan="2" to "7"
+                .event_colspan(@i) when not (@i < 8) {}
+                .event_colspan(@i) when (@i < 8) {
+                    &[colspan="@{i}"] {
+                        width: calc(~'(@{cell_width} * @{i}) - 2px');
+                    }
+                    .event_colspan(@i + 1);
+                }
+                .event_colspan(2);
+                // end loop
+            }
+        }
+    }
+    .fc-basic-view .fc-day-number {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        font-size: 0.85em;
+    }
+    .fc-title { // event title
+        visibility: hidden;
+    }
+    .fc-event { // event background
+        padding: 2px;
+        border: none;
+    }
+}
+.calendarCaption {
+    padding: 0 8px;
+    font-size: 0.85em;
+}
